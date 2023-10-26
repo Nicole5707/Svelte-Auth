@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from "../../Components/Button.svelte";
 	import Input from "../../Components/input.svelte";
+	import Toast from "../../Components/Toast.svelte";
 </script>
 
 <main class="bg-gradient-to-tr from-[#fff_8%] via-[#97E0FF_40%] to-[#fff_90%] bg-no-repeat bg-[300%,300%] animate-wave">
@@ -15,5 +16,6 @@
         <Button type="">Sign Up</Button>
 		<p class="text-xs mt-3">Already have an account? <a href="/login" class="underline">Login</a>.</p>
 	  </form>
+	  <Toast />
 	</div>
 </main>

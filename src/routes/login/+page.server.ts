@@ -16,6 +16,7 @@ export const actions: Actions = {
 				return fail(400, {
 					error: 'Invalid email or password'
 				});
+
 			}
 			return fail(500, {
 				error: 'Server error. Please try again later.'
