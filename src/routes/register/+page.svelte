@@ -23,7 +23,7 @@
 >
 	<div class="container flex justify-center items-center w-screen h-screen mx-auto">
 		<form
-		    id="loginForm"
+			id="loginForm"
 			action="?/register"
 			method="POST"
 			class="auth-form lg:w-2/6 md:w-1/2 bg-opacity-40 bg-white backdrop-blur rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0"
@@ -33,12 +33,15 @@
 			<Input label="Last-Name" name="last_name" type="text" required />
 			<Input label="Email" name="email" type="email" required />
 			<Input label="Password" name="password" type="password" required />
-			<Input label="Confirm-Password" name="confirm-password" type="password" required />
-            {#if form?.status === 400}
-				<p class="text-red-500">{form?.response?.error}</p>
-			{/if}
-			{#if form?.status === 401}
-				<p class="text-red-500">{form?.response?.error}</p>
+			<Input label="Confirm-Password" name="confirm_password" type="password" required />
+			{#if form?.status === 400}
+				<div
+					class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 shadow-md"
+					role="alert"
+				>
+					<strong class="font-bold">Oops!</strong>
+					<span class="block sm:inline">{form?.response?.error}</span>
+				</div>
 			{/if}
 			<Button type="">Sign Up</Button>
 			<p class="text-xs mt-3">
