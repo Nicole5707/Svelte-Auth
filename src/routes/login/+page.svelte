@@ -21,7 +21,13 @@
 		>
 			<h1 class=" text-2xl font-bold title-font mb-5">Login</h1>
 			{#if form?.status === 400}
-				<p>{form?.body?.error}</p>
+				<div
+					class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 shadow-md"
+					role="alert"
+				>
+					<strong class="font-bold">Oops!</strong>
+					<span class="block sm:inline">{form?.body?.error}</span>
+				</div>
 			{/if}
 			<Input label="Email" name="email" type="email" required />
 			<Input label="Password" name="password" type="password" required />
