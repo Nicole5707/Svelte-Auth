@@ -2,7 +2,6 @@
 	import type { PageData } from './$types';
 	import Button from '../Components/Button.svelte';
 	export let data: PageData;
-	// console.log('session', data.session)
 	import { onMount } from 'svelte';
 
 	let avatarUrl = '';
