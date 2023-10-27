@@ -15,6 +15,7 @@
 	import Toast from '../../Components/Toast.svelte';
 	import Button from '../../Components/Button.svelte';
 	import Input from '../../Components/input.svelte';
+	import { error } from '@sveltejs/kit';
 </script>
 
 <main
@@ -22,6 +23,7 @@
 >
 	<div class="container flex justify-center items-center w-screen h-screen mx-auto">
 		<form
+		    id="loginForm"
 			action="?/register"
 			method="POST"
 			class="auth-form lg:w-2/6 md:w-1/2 bg-opacity-40 bg-white backdrop-blur rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0"
@@ -31,6 +33,13 @@
 			<Input label="Last-Name" name="last_name" type="text" required />
 			<Input label="Email" name="email" type="email" required />
 			<Input label="Password" name="password" type="password" required />
+			<Input label="Confirm-Password" name="confirm-password" type="password" required />
+            {#if form?.status === 400}
+				<p class="text-red-500">{form?.response?.error}</p>
+			{/if}
+			{#if form?.status === 401}
+				<p class="text-red-500">{form?.response?.error}</p>
+			{/if}
 			<Button type="">Sign Up</Button>
 			<p class="text-xs mt-3">
 				Already have an account? <a href="/login" class="underline">Login</a>.
